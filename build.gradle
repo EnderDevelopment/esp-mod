@@ -1,0 +1,38 @@
+plugins {
+    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabricmc.net/' }
+}
+
+extensions {
+    loom {
+        minecraftVersion = '1.21.11'
+        mappings = '1.21.11'
+        accessWidener = 'src/main/resources/accessWidener.txt'
+        modId = 'espmod'
+        version = '1.0.0'
+        namespace = 'com.skrzypiecdominik11.espmod'
+        author = 'Dominik Skrzypiec'
+        license = 'MIT'
+    }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.11'
+    mappings 'net.fabricmc:yarn:1.21.11+build.1:v2'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.92.0+1.21.11'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'minecraft_version', project.minecraft.version
+    from(sourceSets.main.resources.srcDirs) {
+        include 'fabric.mod.json'
+        expand 'version':project.version, 'minecraft_version':project.minecraft.version
+    }
+    into 'build/resources/main'
+}

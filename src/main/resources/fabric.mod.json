@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "espmod",
+  "version": "1.0.0",
+  "name": "ESP Mod",
+  "description": "A mod that adds ESP functionality to Minecraft",
+  "authors": ["Dominik Skrzypiec"],
+  "contact": {
+    "homepage": "https://example.com",
+    "sources": "https://github.com/yourusername/espmod"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.skrzypiecdominik11.espmod.ESPMod",
+      "com.skrzypiecdominik11.espmod.ESPModClient"
+    ],
+    "client": [
+      "com.skrzypiecdominik11.espmod.keybind.KeybindHandler"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.21.11",
+    "fabric-api": "*"
+  }
+}

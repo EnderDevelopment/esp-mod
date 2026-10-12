@@ -1,0 +1,7 @@
+{
+  "item.espmod.example_item": "Example Item",
+  "block.espmod.example_block": "Example Block",
+  "gui.espmod.title": "ESP Mod GUI",
+  "gui.espmod.esp_option": "ESP",
+  "gui.espmod.range_option": "Range: %s blocks"
+}
